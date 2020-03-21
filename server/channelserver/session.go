@@ -61,7 +61,7 @@ func (s *Session) Start() {
 // QueueSend queues a packet (raw []byte) to be sent.
 func (s *Session) QueueSend(data []byte) {
 	if s.server.erupeConfig.DevMode && s.server.erupeConfig.DevModeOptions.LogOutboundMessages {
-		fmt.Printf("Sending To CharID: '%x'\n", s.charID)
+		fmt.Printf("Sending To CharID: '%d'\n", s.charID)
 		fmt.Printf("Sent Data:\n%s\n", hex.Dump(data))
 	}
 

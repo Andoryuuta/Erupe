@@ -1,6 +1,7 @@
 www/tw/
 www/jp/
 
+.idea/
 vendor/
 bin/*.bin
 bin/quests/*.bin

@@ -6,7 +6,9 @@ import (
 )
 
 // MsgMhfDisplayedAchievement represents the MSG_MHF_DISPLAYED_ACHIEVEMENT
-type MsgMhfDisplayedAchievement struct{}
+type MsgMhfDisplayedAchievement struct{
+	Unk0      uint8
+}
 
 // Opcode returns the ID associated with this packet type.
 func (m *MsgMhfDisplayedAchievement) Opcode() network.PacketID {
@@ -15,7 +17,8 @@ func (m *MsgMhfDisplayedAchievement) Opcode() network.PacketID {
 
 // Parse parses the packet from binary
 func (m *MsgMhfDisplayedAchievement) Parse(bf *byteframe.ByteFrame) error {
-	panic("Not implemented")
+	m.Unk0 = bf.ReadUint8()
+	return nil
 }
 
 // Build builds a binary packet from the current data.
